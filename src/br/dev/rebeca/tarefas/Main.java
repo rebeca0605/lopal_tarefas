@@ -6,7 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import br.dev.rebeca.tarefas.dao.FuncionarioDAO;
 import br.dev.rebeca.tarefas.model.Funcionario;
 import br.dev.rebeca.tarefas.model.Tarefa;
 
@@ -16,11 +19,45 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Funcionario f = new Funcionario();
-		Tarefa t = new Tarefa();
-		gravarArquivo();
-		lerArquivo();
-
+		List<String> frutas = new ArrayList<>();
+		List<Funcionario> funcionarios = new ArrayList<>();
+		List<Double> numeros = new ArrayList<>();
+		
+		frutas.add("uva verde");
+		frutas.add("morango");
+		frutas.add("melancia");
+		frutas.add("manga");
+		
+		numeros.add(4.7);
+		numeros.add(6.5);
+		numeros.add(18.8);
+		
+		Funcionario funcionario = new Funcionario();
+		funcionario.setCodigo(4);
+		funcionario.setNome("Luana");
+		funcionario.setMatricula("25131808");
+		funcionario.setEmail("luana@gmail.com");
+		
+		Funcionario funcionario2 = new Funcionario();
+		funcionario2.setCodigo(7);
+		funcionario2.setNome("Milla");
+		funcionario2.setMatricula("25131078");
+		funcionario2.setEmail("milla@gmail.com");
+		
+		funcionarios.addAll(List.of(funcionario, funcionario2));
+		
+		System.out.println(frutas);
+		System.out.println(funcionarios);
+		
+		for (Funcionario f : funcionarios) {
+			System.out.println(f.getNome() + "-" + f.getEmail());
+		}
+		
+//		FuncionarioDAO dao = new FuncionarioDAO(funcionario);
+//		dao.gravar();
+//		
+//		System.out.println(funcionario.toString());		
+//
 	}
 
 	private static void gravarArquivo() {
