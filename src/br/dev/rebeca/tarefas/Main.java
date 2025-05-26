@@ -12,6 +12,9 @@ import java.util.List;
 import br.dev.rebeca.tarefas.dao.FuncionarioDAO;
 import br.dev.rebeca.tarefas.model.Funcionario;
 import br.dev.rebeca.tarefas.model.Tarefa;
+import br.dev.rebeca.tarefas.ui.FrameFuncionario;
+import br.dev.rebeca.tarefas.ui.FrameListaFuncionario;
+import br.dev.rebeca.tarefas.utils.Utils;
 
 public class Main {
 
@@ -19,51 +22,33 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		List<String> frutas = new ArrayList<>();
-		List<Funcionario> funcionarios = new ArrayList<>();
-		List<Double> numeros = new ArrayList<>();
+		new FrameListaFuncionario();
 		
-		frutas.add("uva verde");
-		frutas.add("morango");
-		frutas.add("melancia");
-		frutas.add("manga");
-		
-		numeros.add(4.7);
-		numeros.add(6.5);
-		numeros.add(18.8);
-		
-		Funcionario funcionario = new Funcionario();
-		funcionario.setCodigo(4);
-		funcionario.setNome("Luana");
-		funcionario.setMatricula("25131808");
-		funcionario.setEmail("luana@gmail.com");
-		
-		Funcionario funcionario2 = new Funcionario();
-		funcionario2.setCodigo(7);
-		funcionario2.setNome("Milla");
-		funcionario2.setMatricula("25131078");
-		funcionario2.setEmail("milla@gmail.com");
-		
-		funcionarios.addAll(List.of(funcionario, funcionario2));
-		
-		System.out.println(frutas);
-		System.out.println(funcionarios);
-		
-		for (Funcionario f : funcionarios) {
-			System.out.println(f.getNome() + "-" + f.getEmail());
-		}
-		
-//		FuncionarioDAO dao = new FuncionarioDAO(funcionario);
-//		dao.gravar();
-//		
-//		System.out.println(funcionario.toString());		
+//		new FrameFuncionario();
 //
+//		Funcionario funcionario = new Funcionario();
+//		funcionario.setCodigo(Utils.gerarUUID());
+//		funcionario.setNome("Luana");
+//		funcionario.setTelefone("25131808");
+//		funcionario.setEmail("luana@gmail.com");
+//
+//		Funcionario funcionario2 = new Funcionario();
+//		funcionario2.setCodigo(Utils.gerarUUID());
+//		funcionario2.setNome("Milla");
+//		funcionario2.setTelefone("25131078");
+//		funcionario2.setEmail("milla@gmail.com");
+//
+//		FuncionarioDAO dao = new FuncionarioDAO(funcionario2);
+//		dao.gravar();
+//
+//		System.out.println(funcionario2.toString());
+
 	}
 
 	private static void gravarArquivo() {
 
 		FileWriter arquivo = null;
-		BufferedWriter escritor = null;  
+		BufferedWriter escritor = null;
 
 		try {
 
