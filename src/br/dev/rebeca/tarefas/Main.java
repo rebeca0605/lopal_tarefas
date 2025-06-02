@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.dev.rebeca.tarefas.dao.FuncionarioDAO;
+import br.dev.rebeca.tarefas.gui.TelaInicial;
 import br.dev.rebeca.tarefas.model.Funcionario;
 import br.dev.rebeca.tarefas.model.Tarefa;
 import br.dev.rebeca.tarefas.ui.FrameFuncionario;
@@ -22,7 +23,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		new FrameListaFuncionario();
+		new TelaInicial();
+		
+//		new FrameListaFuncionario();
 //		
 //		new FrameFuncionario();
 		
