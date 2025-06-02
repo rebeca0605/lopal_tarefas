@@ -23,26 +23,11 @@ public class Main {
 	public static void main(String[] args) {
 		
 		new FrameListaFuncionario();
-		
+//		
 //		new FrameFuncionario();
-//
-//		Funcionario funcionario = new Funcionario();
-//		funcionario.setCodigo(Utils.gerarUUID());
-//		funcionario.setNome("Luana");
-//		funcionario.setTelefone("25131808");
-//		funcionario.setEmail("luana@gmail.com");
-//
-//		Funcionario funcionario2 = new Funcionario();
-//		funcionario2.setCodigo(Utils.gerarUUID());
-//		funcionario2.setNome("Milla");
-//		funcionario2.setTelefone("25131078");
-//		funcionario2.setEmail("milla@gmail.com");
-//
-//		FuncionarioDAO dao = new FuncionarioDAO(funcionario2);
-//		dao.gravar();
-//
-//		System.out.println(funcionario2.toString());
-
+		
+		
+		
 	}
 
 	private static void gravarArquivo() {

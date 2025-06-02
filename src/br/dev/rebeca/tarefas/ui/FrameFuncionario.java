@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -29,17 +30,17 @@ public class FrameFuncionario {
 	private JButton btnSalvar;
 	private JButton btnSair;
 
-	public FrameFuncionario() {
-		criarTela();
+	public FrameFuncionario(JFrame telaLista) {
+		criarTela(telaLista);
 	}
 
-	private void criarTela() {
-
-		JFrame tela = new JFrame("Cadastro de Funcionários");
+	private void criarTela(JFrame telaLista) {
+		JDialog tela = new JDialog(telaLista, "Cadastro", true);
 		tela.setLayout(null);
 		tela.setSize(400, 400);
 		tela.setResizable(false);
-		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		tela.setLocationRelativeTo(telaLista);
 
 		Container painel = tela.getContentPane();
 
@@ -118,7 +119,7 @@ public class FrameFuncionario {
 					;
 
 				if (resposta == 0) {
-					System.exit(0);
+					tela.dispose();
 				}
 			}
 		});
