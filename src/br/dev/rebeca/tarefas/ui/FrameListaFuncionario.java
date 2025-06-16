@@ -34,7 +34,7 @@ public class FrameListaFuncionario {
 	private void criarTela() {
 		
 		JFrame tela = new JFrame();
-		tela.setTitle("Cadastro de Funcionários");
+		tela.setTitle("Lista de Funcionários");
 		tela.setSize(600, 600);
 		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		tela.setResizable(false);
@@ -43,7 +43,7 @@ public class FrameListaFuncionario {
 		
 		Container painel = tela.getContentPane();
 		
-		lblTitulo = new JLabel("Cadastro de Funcionários");
+		lblTitulo = new JLabel("Lista de Funcionários");
 		lblTitulo.setBounds(10, 20, 500, 30);
 		lblTitulo.setFont(fontTitulo);
 		

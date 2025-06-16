@@ -95,13 +95,10 @@ public class FrameFuncionario {
 
 				FuncionarioDAO dao = new FuncionarioDAO(funcionario);
 				dao.gravar();
-				
-				JOptionPane.showMessageDialog(tela, 
-						txtNome.getText() + " gravado com sucesso!", 
-						"Sucesso", 
-						JOptionPane.INFORMATION_MESSAGE
-				);
-				
+
+				JOptionPane.showMessageDialog(tela, txtNome.getText() + " gravado com sucesso!", "Sucesso",
+						JOptionPane.INFORMATION_MESSAGE);
+
 				limparFormulario();
 			}
 		});
@@ -111,12 +108,8 @@ public class FrameFuncionario {
 			// Botão de saída do sistema
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int resposta = JOptionPane.showConfirmDialog(
-						tela, 
-						"Confirma a saída do sistema?", 
-						"Sair do Sistema",
-						JOptionPane.YES_NO_OPTION)
-					;
+				int resposta = JOptionPane.showConfirmDialog(tela, "Confirma a saída do sistema?", "Sair do Sistema",
+						JOptionPane.YES_NO_OPTION);
 
 				if (resposta == 0) {
 					tela.dispose();

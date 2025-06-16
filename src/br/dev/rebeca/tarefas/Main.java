@@ -15,6 +15,8 @@ import br.dev.rebeca.tarefas.model.Funcionario;
 import br.dev.rebeca.tarefas.model.Tarefa;
 import br.dev.rebeca.tarefas.ui.FrameFuncionario;
 import br.dev.rebeca.tarefas.ui.FrameListaFuncionario;
+import br.dev.rebeca.tarefas.ui.FrameListaTarefas;
+import br.dev.rebeca.tarefas.ui.FrameTarefa;
 import br.dev.rebeca.tarefas.utils.Utils;
 
 public class Main {
@@ -24,13 +26,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		new TelaInicial();
-		
-//		new FrameListaFuncionario();
-//		
-//		new FrameFuncionario();
-		
-		
-		
+
 	}
 
 	private static void gravarArquivo() {

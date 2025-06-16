@@ -7,29 +7,30 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileFactory {
-
+public class TaskFileFactory {
+	
 	private FileWriter fw;
 	private BufferedWriter bw;
-
+	
 	private FileReader fr;
 	private BufferedReader br;
-
-	private String pathFuncionarios = "C:\\Users\\25132910\\tarefa\\funcionarios.csv";
-
+	
+	private String pathTarefas = "C:\\Users\\25132910\\tarefa\\tarefas.cvs";
+	
 	public BufferedReader getBufferedReader() throws FileNotFoundException, IOException {
-
-		fr = new FileReader(pathFuncionarios);
+		
+		fr = new FileReader(pathTarefas);
 		br = new BufferedReader(fr);
 		return br;
-
+		
 	}
 
-	public BufferedWriter getBuferredWriter() throws FileNotFoundException, IOException {
+	public BufferedWriter getBufferedWriter() throws FileNotFoundException, IOException {
 
-		fw = new FileWriter(pathFuncionarios, true);
+		fw = new FileWriter(pathTarefas, true);
 		bw = new BufferedWriter(fw);
 		return bw;
+
 	}
 
 }

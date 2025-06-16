@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Tarefa {
 
-	private int codigo;
+	private String codigo;
 	private String titulo;
 	private String descricao;
 	private LocalDateTime dataInicio;
@@ -12,19 +12,26 @@ public class Tarefa {
 	private LocalDateTime dataConclusao;
 	private Status status;
 	private Funcionario responsavel;
-	
-	//Método Construtor
+
+	// Método Construtor
 	public Tarefa(String titulo) {
 		this.titulo = titulo;
 	}
-	
+
 	public Tarefa(String titulo, LocalDateTime dataInicial) {
-		
+
 	}
 
-	
 	public Tarefa() {
-		
+
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getTitulo() {
@@ -59,6 +66,14 @@ public class Tarefa {
 		this.prazo = prazo;
 	}
 
+	public LocalDateTime getDataConclusao() {
+		return dataConclusao;
+	}
+
+	public void setDataConclusao(LocalDateTime dataConclusao) {
+		this.dataConclusao = dataConclusao;
+	}
+
 	public Status getStatus() {
 		return status;
 	}
@@ -71,16 +86,14 @@ public class Tarefa {
 		return responsavel;
 	}
 
-	public void setResponsavel(Funcionario responsavel) {
+	public void setResponsavel(String tarefa) {
 		this.responsavel = responsavel;
 	}
 
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public LocalDateTime getDataConclusao() {
-		return dataConclusao;
+	@Override
+	public String toString() {
+		return this.codigo + "," + this.titulo + "," + this.descricao + "," + this.dataInicio + "," + this.prazo + ","
+				+ this.dataConclusao + "," + this.status + "," + this.responsavel + "\n";
 	}
 
 }
