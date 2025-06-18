@@ -8,21 +8,21 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class TaskFileFactory {
-	
+
 	private FileWriter fw;
 	private BufferedWriter bw;
-	
+
 	private FileReader fr;
 	private BufferedReader br;
-	
-	private String pathTarefas = "C:\\Users\\25132910\\tarefa\\tarefas.cvs";
-	
+
+	private String pathTarefas = "C:\\Users\\User\\tarefa\\tarefas.csv";
+
 	public BufferedReader getBufferedReader() throws FileNotFoundException, IOException {
-		
+
 		fr = new FileReader(pathTarefas);
 		br = new BufferedReader(fr);
 		return br;
-		
+
 	}
 
 	public BufferedWriter getBufferedWriter() throws FileNotFoundException, IOException {

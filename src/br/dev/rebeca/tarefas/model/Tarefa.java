@@ -86,12 +86,11 @@ public class Tarefa {
 		return responsavel;
 	}
 
-	public void setResponsavel(String tarefa) {
+	public void setResponsavel(Funcionario tarefa) {
 		this.responsavel = responsavel;
 	}
 
-	@Override
-	public String toString() {
+	public String formatarArquivo() {
 		return this.codigo + "," + this.titulo + "," + this.descricao + "," + this.dataInicio + "," + this.prazo + ","
 				+ this.dataConclusao + "," + this.status + "," + this.responsavel + "\n";
 	}

@@ -14,28 +14,32 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import br.dev.rebeca.tarefas.dao.FuncionarioDAO;
+import br.dev.rebeca.tarefas.dao.TarefaDAO;
 import br.dev.rebeca.tarefas.model.Funcionario;
+import br.dev.rebeca.tarefas.model.Tarefa;
+import br.dev.rebeca.tarefas.utils.Utils;
 
 public class FrameTarefa {
 
 	JLabel lblTitulo;
-	JTextField txtTitulo;
 	JLabel lblDescricao;
-	JTextField txtDescricao;
 	JLabel lblDataInicial;
-	JTextField txtDataInicial;
 	JLabel lblPrazo;
-	JTextField txtPrazo;
-	JLabel lblConclusao;
-	JTextField txtConclusao;
+	JLabel lblDataConclusao;
 	JLabel lblStatus;
-	JComboBox<String> boxStatus;
 	JLabel lblFuncionario;
+
+	JTextField txtTitulo;
+	JTextField txtDescricao;
+	JTextField txtDataInicial;
+	JTextField txtPrazo;
+	JTextField txtDataConclusao;
+	
+	JComboBox<String> boxStatus;
 	JComboBox<String> boxFuncionario;
+	
 	JButton btnSalvar;
 	JButton btnSair;
-
-	private Font fontTitulo = new Font("Arial", Font.BOLD, 14);
 
 	public FrameTarefa() {
 		criarTela();
@@ -72,10 +76,10 @@ public class FrameTarefa {
 		txtPrazo = new JTextField();
 		txtPrazo.setBounds(20, 260, 250, 35);
 
-		lblConclusao = new JLabel("Data Conclusão:");
-		lblConclusao.setBounds(20, 290, 150, 50);
-		txtConclusao = new JTextField();
-		txtConclusao.setBounds(20, 330, 250, 35);
+		lblDataConclusao = new JLabel("Data Conclusão:");
+		lblDataConclusao.setBounds(20, 290, 150, 50);
+		txtDataConclusao = new JTextField();
+		txtDataConclusao.setBounds(20, 330, 250, 35);
 
 		lblStatus = new JLabel("Status:");
 		lblStatus.setBounds(20, 360, 150, 50);
@@ -98,7 +102,24 @@ public class FrameTarefa {
 
 		btnSalvar = new JButton("Salvar");
 		btnSalvar.setBounds(20, 470, 130, 35);
-		
+		btnSalvar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Tarefa tarefa = new Tarefa();
+				tarefa.setCodigo(Utils.gerarUUID());
+				tarefa.setTitulo(txtTitulo.getText());
+
+				TarefaDAO dao = new TarefaDAO(tarefa);
+				dao.gravar();
+				JOptionPane.showMessageDialog(tela, txtTitulo.getText() + " gravado com Sucesso!",
+						"Sucesso", JOptionPane.INFORMATION_MESSAGE);
+				
+				limparFormulario();
+
+			}
+		});
+
 		btnSair = new JButton("Sair");
 		btnSair.setBounds(160, 470, 130, 35);
 		btnSair.addActionListener(new ActionListener() {
@@ -122,8 +143,8 @@ public class FrameTarefa {
 		painel.add(txtDataInicial);
 		painel.add(lblPrazo);
 		painel.add(txtPrazo);
-		painel.add(lblConclusao);
-		painel.add(txtConclusao);
+		painel.add(lblDataConclusao);
+		painel.add(txtDataConclusao);
 		painel.add(lblStatus);
 		painel.add(boxStatus);
 		painel.add(lblFuncionario);
@@ -132,6 +153,14 @@ public class FrameTarefa {
 		painel.add(btnSair);
 
 		tela.setVisible(true);
+	}
+	
+	private void limparFormulario() {
+		txtTitulo.setText(null);
+		txtDescricao.setText(null);
+		txtDataInicial.setText(null);
+		txtPrazo.setText(null);
+		txtDataConclusao.setText(null);
 	}
 
 }

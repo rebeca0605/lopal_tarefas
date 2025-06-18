@@ -18,6 +18,8 @@ public class TelaInicial {
 	private JButton btnFuncionarios;
 	private JButton btnTarefas;
 	
+	private Font fontBotao = new Font("Arial", Font.BOLD, 16);
+	
 	public TelaInicial() {
 		criarTela();
 	}
@@ -35,6 +37,7 @@ public class TelaInicial {
 		
 		btnFuncionarios = new JButton("Funcionários");
 		btnFuncionarios.setBounds(40, 50, 150, 40);
+		btnFuncionarios.setFont(fontBotao);
 		btnFuncionarios.addActionListener(new ActionListener() {
 			
 			@Override
@@ -45,6 +48,7 @@ public class TelaInicial {
 		
 		btnTarefas = new JButton("Tarefas");
 		btnTarefas.setBounds(200, 50, 150, 40);
+		btnTarefas.setFont(fontBotao);
 		btnTarefas.addActionListener(new ActionListener() {
 			
 			@Override

@@ -67,21 +67,6 @@ public class FrameFuncionario {
 
 		btnSalvar = new JButton("Salvar");
 		btnSalvar.setBounds(20, 290, 100, 40);
-
-		btnSair = new JButton("Sair");
-		btnSair.setBounds(130, 290, 100, 40);
-
-		painel.add(lblCodigo);
-		painel.add(txtCodigo);
-		painel.add(lblNome);
-		painel.add(txtNome);
-		painel.add(lblTelefone);
-		painel.add(txtTelefone);
-		painel.add(lblEmail);
-		painel.add(txtEmail);
-		painel.add(btnSalvar);
-		painel.add(btnSair);
-
 		// Adicionar os ouvintes de ação dos botões (Action Listener)
 		btnSalvar.addActionListener(new ActionListener() {
 
@@ -103,6 +88,8 @@ public class FrameFuncionario {
 			}
 		});
 
+		btnSair = new JButton("Sair");
+		btnSair.setBounds(130, 290, 100, 40);
 		btnSair.addActionListener(new ActionListener() {
 
 			// Botão de saída do sistema
@@ -116,6 +103,17 @@ public class FrameFuncionario {
 				}
 			}
 		});
+
+		painel.add(lblCodigo);
+		painel.add(txtCodigo);
+		painel.add(lblNome);
+		painel.add(txtNome);
+		painel.add(lblTelefone);
+		painel.add(txtTelefone);
+		painel.add(lblEmail);
+		painel.add(txtEmail);
+		painel.add(btnSalvar);
+		painel.add(btnSair);
 
 		tela.setVisible(true);
 	}
